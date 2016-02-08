@@ -1,0 +1,38 @@
+<h1>Galvanize Publications</h1>
+<h2>Edit Publication</h2>
+
+<section class="edit">
+  <form class="box" name="myForm" ng-submit="editPublication(publication)">
+    <label class="label2" for="name">Publication Name</label>
+      <input class="input input2" type="text" name="name" ng-model="publication.name" required />
+
+    <label class="label2" for="desc">Description</label>
+      <input class="input input2" type="text" name="desc" ng-model="publication.desc" required />
+
+      <label class="label2" for="topics">Topics</label>
+        <input class="input input2" type="text" name="topics" ng-model="publication.topics" />
+
+      <label class="label2" for="price">Price</label>
+        <input class="input input2" type="text" name="price" ng-model="publication.price" />
+
+        <label class="white">This publication is...
+    <div class="flex2 radio2">
+      <label><span>Physical</span>
+        <input type="radio" name="physical" value="true" ng-model="publication.physical" />
+      </label>
+      <label><span>Electronic</span>
+        <input type="radio" name="physical" value="false" ng-model="publication.physical" />
+      </label>
+    </div>
+  </label>
+
+      <label class="label2" for="schedule">Publishing Schedule</label>
+        <input class="input input2" type="text" name="schedule" ng-model="publication.schedule" required />
+      <div class="flex input2">
+        <input class="button margin-t" ng-href="/#/" type="submit" value="Save Publication">
+        <li><a class="left button2 margin-t" ng-href="/#/">Cancel</a></li>
+        <li class="align"><a class="button margin-top" href="/#/" ng-click="deletePublication(publication)">Delete</a></li>
+      </div>
+  </form>
+
+</section>

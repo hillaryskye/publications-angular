@@ -1,0 +1,13 @@
+<section>
+  <h1>Galvanize Publications</h1>
+  <a class="button back right" href="/#/publications/new">Create New Publication</a>
+  <div class="row">
+
+  <div class="one-half border box" ng-repeat="publication in publications | orderBy: 'name'">
+    <p>{{publication.name}} - {{publication.price | currency}}</p>
+    <p>{{publication.desc}}</p>
+    <p>Topics: {{publication.topics}}</p>
+  <a class="button" href="/#/publications/{{publication._id}}">View Publication</a>
+  </div>
+</div>
+</section>

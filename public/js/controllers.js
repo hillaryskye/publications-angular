@@ -22,7 +22,7 @@ app.controller("NewCtrl", ["$scope", "$routeParams", "$http", "$route", "$locati
         schedule: $scope.publication.schedule
       }
       // $http.post('https://localhost:8080/api/publications', publication)
-      $http.post('https://fierce-dusk-42290.herokuapp.com/api/publications', publication)
+      $http.post('https://fierce-dusk-42290.herokuapp.com/api/publications/', publication)
       .then(function(response) {
         console.log(response)
         $location.path('/');
@@ -92,7 +92,7 @@ app.controller("EditCtrl", ["$scope", "$routeParams", "$http", "$route", "$locat
 console.log('from Editctrl')
 console.log('routeparams', $routeParams.id)
 
-$http.get('https://fierce-dusk-42290.herokuapp.com/api/publications' + $routeParams.id)
+$http.get('https://fierce-dusk-42290.herokuapp.com/api/publications/' + $routeParams.id)
   .then(function(response) {
     console.log(response)
     $scope.publication = response.data;

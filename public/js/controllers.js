@@ -1,5 +1,5 @@
 app.controller("HomeCtrl", ["$scope", "$http",  "$routeParams", "$location", "$route", function($scope, $http, $routeParams, $location, $route) {
-  $http.get('http://localhost:8080/api/publications')
+  $http.get('https://fierce-dusk-42290.herokuapp.com/')
   .then(function(response) {
     $scope.publications = response.data;
     console.log('results', $scope.publications)
@@ -22,7 +22,7 @@ app.controller("NewCtrl", ["$scope", "$routeParams", "$http", "$route", "$locati
         schedule: $scope.publication.schedule
       }
       // $http.post('http://localhost:8080/api/publications', publication)
-      $http.post('process.env.MONGOLAB_URI/api/publications', publication)
+      $http.post('https//fierce-dusk-42290.herokuapp.com/', publication)
       .then(function(response) {
         console.log(response)
         $location.path('/');
@@ -35,7 +35,7 @@ app.controller("NewCtrl", ["$scope", "$routeParams", "$http", "$route", "$locati
 
   app.controller("ShowCtrl", ["$scope", "$routeParams", "$http", "$route", "$location", function($scope, $routeParams, $http, $route, $location) {
   console.log('routeParams', $routeParams.id)
-  $http.get('http://localhost:8080/api/publications/' + $routeParams.id)
+  $http.get('https://fierce-dusk-42290.herokuapp.com' + $routeParams.id)
   .then(function(response) {
     console.log(response)
     $scope.publication = response.data;
@@ -65,7 +65,7 @@ app.controller("NewCtrl", ["$scope", "$routeParams", "$http", "$route", "$locati
 
   publication.subscriptions = subscriptions
 
-  $http.put('http://localhost:8080/api/publications/' + publication._id, publication)
+  $http.put('https://fierce-dusk-42290.herokuapp.com/' + publication._id, publication)
     .then(function(response) {
       console.log("added");
   }, function(response) {
@@ -79,7 +79,7 @@ app.controller("NewCtrl", ["$scope", "$routeParams", "$http", "$route", "$locati
     var index = publication.subscriptions.indexOf(subscribe)
     console.log('index', index)
     publication.subscriptions.splice(index, 1)
-    $http.put('http://localhost:8080/api/publications/' + publication._id, publication)
+    $http.put('https://fierce-dusk-42290.herokuapp.com/' + publication._id, publication)
     .then(function(response) {
        console.log("deleted.");
      }, function(response) {
@@ -92,7 +92,7 @@ app.controller("EditCtrl", ["$scope", "$routeParams", "$http", "$route", "$locat
 console.log('from Editctrl')
 console.log('routeparams', $routeParams.id)
 
-$http.get('http://localhost:8080/api/publications/' + $routeParams.id)
+$http.get('https://fierce-dusk-42290.herokuapp.com/' + $routeParams.id)
   .then(function(response) {
     console.log(response)
     $scope.publication = response.data;
@@ -114,7 +114,7 @@ $http.get('http://localhost:8080/api/publications/' + $routeParams.id)
       schedule: $scope.publication.schedule
     }
 
-    $http.put('http://localhost:8080/api/publications/' + $routeParams.id, publication)
+    $http.put('https://fierce-dusk-42290.herokuapp.com/' + $routeParams.id, publication)
       .then(function(response) {
        console.log("update");
        $location.path('/');
@@ -125,7 +125,7 @@ $http.get('http://localhost:8080/api/publications/' + $routeParams.id)
 
   $scope.deletePublication = function(publication) {
     console.log('delete', publication)
-    $http.delete('http://localhost:8080/api/publications/' + publication._id, publication)
+    $http.delete('https://fierce-dusk-42290.herokuapp.com/' + publication._id, publication)
     .then(function(response) {
       $route.reload()
     }, function(response) {

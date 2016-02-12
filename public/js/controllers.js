@@ -1,5 +1,5 @@
 app.controller("HomeCtrl", ["$scope", "$http",  "$routeParams", "$location", "$route", function($scope, $http, $routeParams, $location, $route) {
-  $http.get('https://fierce-dusk-42290.herokuapp.com/api/publications')
+  $http.get('https://fierce-dusk-42290.herokuapp.com/api/publications/')
   .then(function(response) {
     $scope.publications = response.data;
     console.log('results', $scope.publications)

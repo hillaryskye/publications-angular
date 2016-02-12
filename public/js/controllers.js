@@ -21,7 +21,8 @@ app.controller("NewCtrl", ["$scope", "$routeParams", "$http", "$route", "$locati
         physical: $scope.publication.physical,
         schedule: $scope.publication.schedule
       }
-      $http.post('http://localhost:8080/api/publications', publication)
+      // $http.post('http://localhost:8080/api/publications', publication)
+      $http.post('process.env.MONGOLAB_URI/api/publications', publication)
       .then(function(response) {
         console.log(response)
         $location.path('/');

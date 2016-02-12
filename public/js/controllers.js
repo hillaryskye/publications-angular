@@ -65,7 +65,7 @@ app.controller("NewCtrl", ["$scope", "$routeParams", "$http", "$route", "$locati
 
   publication.subscriptions = subscriptions
 
-  $http.put('https://fierce-dusk-42290.herokuapp.com/api/publications' + publication._id, publication)
+  $http.put('https://fierce-dusk-42290.herokuapp.com/api/publications/' + publication._id, publication)
     .then(function(response) {
       console.log("added");
   }, function(response) {

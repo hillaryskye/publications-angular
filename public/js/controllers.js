@@ -35,7 +35,7 @@ app.controller("NewCtrl", ["$scope", "$routeParams", "$http", "$route", "$locati
 
   app.controller("ShowCtrl", ["$scope", "$routeParams", "$http", "$route", "$location", function($scope, $routeParams, $http, $route, $location) {
   console.log('routeParams', $routeParams.id)
-  $http.get('https://fierce-dusk-42290.herokuapp.com/api/publications' + $routeParams.id)
+  $http.get('https://fierce-dusk-42290.herokuapp.com/api/publications/' + $routeParams.id)
   .then(function(response) {
     console.log(response)
     $scope.publication = response.data;

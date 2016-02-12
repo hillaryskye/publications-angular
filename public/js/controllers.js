@@ -114,7 +114,7 @@ $http.get('https://fierce-dusk-42290.herokuapp.com/api/publications' + $routePar
       schedule: $scope.publication.schedule
     }
 
-    $http.put('https://fierce-dusk-42290.herokuapp.com/api/publications' + $routeParams.id, publication)
+    $http.put('https://fierce-dusk-42290.herokuapp.com/api/publications/' + $routeParams.id, publication)
       .then(function(response) {
        console.log("update");
        $location.path('/');

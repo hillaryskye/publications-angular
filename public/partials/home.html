@@ -4,8 +4,9 @@
   <div class="row">
 
   <div class="one-half border box" ng-repeat="publication in publications | orderBy: 'name'">
-    <p ng-if="publication.price==='true'">{{publication.name}} - {{publication.price | currency }}</p>
-    <p ng-if="publication.price==='false'">{{publication.name}} - Free</p>
+    <!-- <p ng-if="publication.price==='true'">{{publication.name}} - {{publication.price | currency }}</p>
+    <p ng-if="publication.price==='false'">{{publication.name}} - Free</p> -->
+    <p>{{publication.name}} - {{publication.price===0 ? 'FREE': publication.price | currency }}</p>    
     <p>{{publication.desc}}</p>
     <p>Topics: {{publication.topics}}</p>
   <a class="button" href="/#/publications/{{publication._id}}">View Publication</a>

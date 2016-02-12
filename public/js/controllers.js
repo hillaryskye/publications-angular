@@ -125,7 +125,7 @@ $http.get('https://fierce-dusk-42290.herokuapp.com/api/publications/' + $routePa
 
   $scope.deletePublication = function(publication) {
     console.log('delete', publication)
-    $http.delete('https://fierce-dusk-42290.herokuapp.com/api/publications' + publication._id, publication)
+    $http.delete('https://fierce-dusk-42290.herokuapp.com/api/publications/' + publication._id, publication)
     .then(function(response) {
       $route.reload()
     }, function(response) {

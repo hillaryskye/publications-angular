@@ -4,14 +4,10 @@
 //   }
 // })
 
-app.filter ('FREE', function () {
-  console.log('free outside')
-  return function (input) {
-    if (input === '0' || input === '0.0') {
-      console.log('FREE inside')
-     return 'FREE'
-    } else {
-     return input
-    }
+app.filter('FREE', function() {
+  return function(input) {
+    if (input === 0) {
+    return 'FREE'
+  } else { return '$' + input }
   }
 })
